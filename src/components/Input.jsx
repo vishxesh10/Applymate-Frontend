@@ -14,7 +14,7 @@ export default function Input({ onGenerationComplete }) {
       }
     }
     return {
-      domain: "",
+      Role: "",
       company: "",
       experience: "",
       type: "Cover Letter",
@@ -47,8 +47,8 @@ export default function Input({ onGenerationComplete }) {
   };
 
   const validateForm = () => {
-    if (!formData.domain.trim()) {
-      setError("Domain is required");
+    if (!formData.Role.trim()) {
+      setError("Role is required");
       return false;
     }
     if (!formData.company.trim()) {
@@ -79,7 +79,7 @@ export default function Input({ onGenerationComplete }) {
     try {
       // Create FormData object
       const dataToSend = new FormData();
-      dataToSend.append("domain", formData.domain);
+      dataToSend.append("Role", formData.Role);
       dataToSend.append("company", formData.company);
       dataToSend.append("experience", formData.experience);
       dataToSend.append("type", formData.type);
@@ -96,7 +96,7 @@ export default function Input({ onGenerationComplete }) {
 
       onGenerationComplete({
         variations: variations,
-        domain: formData.domain,
+        Role: formData.Role,
         company: formData.company,
         experience: formData.experience,
         type: formData.type,
@@ -136,25 +136,25 @@ export default function Input({ onGenerationComplete }) {
           </div>
         )}
 
-        {/* DOMAIN INPUT */}
+        {/* Role INPUT */}
         <div className={styles.input}>
-          <label className={styles.domain} htmlFor="domain">
-            Domain:
+          <label className={styles.Role} htmlFor="Role">
+            Role: *
           </label>
           <input
             type="text"
-            id="domain"
-            name="domain"
-            value={formData.domain}
+            id="Role"
+            name="Role"
+            value={formData.Role}
             onChange={handleInputChange}
-            placeholder="Enter domain"
+            placeholder="Enter Role"
           />
         </div>
 
         {/* COMPANY INPUT */}
         <div className={styles.input}>
           <label className={styles.company} htmlFor="company">
-            Company:
+            Company: *
           </label>
           <input
             type="text"
@@ -169,7 +169,7 @@ export default function Input({ onGenerationComplete }) {
         {/* EXPERIENCE SELECT */}
         <div className={styles.input}>
           <label className={styles.experience} htmlFor="experience">
-            Experience:
+            Experience: *
           </label>
           <select
             id="experience"
@@ -252,7 +252,7 @@ export default function Input({ onGenerationComplete }) {
 
         {/* JOB DESCRIPTION TEXTAREA */}
         <div className={styles.formGroup}>
-          <label className={styles.label}>Job Description</label>
+          <label className={styles.label}>Job Description *</label>
           <textarea
             name="description"
             rows="4"

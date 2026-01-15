@@ -55,8 +55,8 @@ export default function Results({ data, onGenerateAnother }) {
             {/* Metadata Cards */}
             <div className={styles.metadataGrid}>
                 <div className={styles.metadataCard}>
-                    <span className={styles.metadataLabel}>Domain</span>
-                    <span className={styles.metadataValue}>{data.domain}</span>
+                    <span className={styles.metadataLabel}>Role</span>
+                    <span className={styles.metadataValue}>{data.Role}</span>
                 </div>
                 <div className={styles.metadataCard}>
                     <span className={styles.metadataLabel}>Company</span>
