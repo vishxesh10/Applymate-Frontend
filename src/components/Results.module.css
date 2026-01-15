@@ -1,0 +1,338 @@
+/* ===== RESULTS PAGE CONTAINER ===== */
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    max-width: 900px;
+    width: 95%;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== HEADER SECTION ===== */
+
+.header {
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0 0 8px 0;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #718096;
+    margin: 0;
+}
+
+/* ===== METADATA GRID ===== */
+
+.metadataGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.metadataCard {
+    background-color: #f7fafc;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-left: 4px solid #3182ce;
+}
+
+.metadataLabel {
+    font-size: 12px;
+    font-weight: 600;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metadataValue {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+/* ===== VARIATION TABS ===== */
+
+.tabsContainer {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 0;
+    /* Connect to content box */
+    padding: 0 8px;
+    overflow-x: auto;
+    /* Allow scroll on small screens */
+    padding-bottom: 2px;
+}
+
+.tabButton {
+    padding: 10px 20px;
+    background-color: #edf2f7;
+    color: #4a5568;
+    border: none;
+    border-radius: 8px 8px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.tabButton:hover {
+    background-color: #e2e8f0;
+    color: #2d3748;
+}
+
+.activeTab {
+    background-color: #f0f4f8;
+    /* Match content box */
+    color: #3182ce;
+    border-bottom: 2px solid #3182ce;
+    /* Blue indicator */
+    z-index: 1;
+    /* Sit above border */
+}
+
+/* ===== CONTENT BOX ===== */
+
+.contentBox {
+    background-color: #f0f4f8;
+    border-radius: 0 8px 8px 8px;
+    /* Square top-left for tab connection */
+    padding: 24px;
+    margin-bottom: 32px;
+    border-left: 4px solid #48bb78;
+    position: relative;
+    /* For z-index context */
+}
+
+
+.contentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens */
+    gap: 12px;
+}
+
+.headerLeft {
+    display: flex;
+    flex-direction: column;
+}
+
+.editHint {
+    font-size: 11px;
+    color: #718096;
+    font-style: italic;
+    margin-top: 2px;
+}
+
+.headerActions {
+    display: flex;
+    gap: 10px;
+}
+
+.contentHeader h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.copyButton,
+.pdfButton {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyButton {
+    background-color: #3182ce;
+    color: #ffffff;
+}
+
+.copyButton:hover {
+    background-color: #2c5aa0;
+    transform: scale(1.05);
+}
+
+.copyButton:active {
+    transform: scale(0.98);
+}
+
+.pdfButton {
+    background-color: #fc8181;
+    /* Red-ish for PDF */
+    color: white;
+}
+
+.pdfButton:hover {
+    background-color: #e53e3e;
+    transform: scale(1.05);
+}
+
+.pdfButton:active {
+    transform: scale(0.98);
+}
+
+
+.contentTextarea {
+    font-family: 'Times New Roman', Times, serif;
+    /* Doc style font */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #1a202c;
+    width: 100%;
+    min-height: 600px;
+    /* Taller */
+    padding: 40px;
+    /* More padding like a page margins */
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 2px;
+    /* Sharper corners */
+    resize: vertical;
+    outline: none;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    /* Paper shadow */
+    white-space: pre-wrap;
+    /* Ensure newlines are respected */
+}
+
+.contentTextarea:focus {
+    border-color: #a0aec0;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    /* Lift effect */
+}
+
+/* ===== ACTION BUTTONS ===== */
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.primaryButton {
+    padding: 12px 32px;
+    background-color: #3182ce;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+}
+
+.primaryButton:hover {
+    background-color: #2c5aa0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(49, 130, 206, 0.4);
+}
+
+.primaryButton:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 24px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .metadataGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contentHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .copyButton {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 16px;
+    }
+
+    .metadataGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .contentHeader {
+        align-items: stretch;
+        /* Full width children */
+    }
+
+    .headerActions {
+        flex-direction: column;
+        /* Stack Copy/PDF */
+    }
+
+    .copyButton,
+    .pdfButton {
+        width: 100%;
+        /* Full width buttons */
+        justify-content: center;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .primaryButton {
+        width: 100%;
+    }
+}
