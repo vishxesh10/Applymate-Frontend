@@ -9,7 +9,7 @@ A premium, AI-powered cover letter generator built with **React** and **Glassmor
 
 *   **Glassmorphism UI**: Modern, translucent card design with dynamic mesh gradients.
 *   **Resume Parsing**: Upload a PDF resume to auto-contextualize the output.
-*   **AI Integration**: Connects to Groq (Llama-3) for generating high-quality text.
+*   **AI Integration**: Powered by **Groq AI** (Llama-3) for generating high-quality text.
 *   **3 Styling Options**: Professional, Creative, and Concise variations.
 *   **Mobile Responsive**: Fully optimized for touch devices.
 *   **Auto-Save**: Inputs persist via LocalStorage.
@@ -17,11 +17,11 @@ A premium, AI-powered cover letter generator built with **React** and **Glassmor
 
 ## 🛠️ Tech Stack
 
-*   **Framework**: React 18 + Vite
+*   **Frontend**: React 18 + Vite
 *   **Styling**: CSS Modules (Custom Glassmorphism)
+*   **Backend Integration**: **FastAPI** (Python) + **Groq AI**
 *   **State Management**: React Hooks + LocalStorage
 *   **PDF Generation**: `jspdf`
-*   **Icons**: standard SVGs
 
 ## 🚀 Getting Started
 
@@ -52,11 +52,3 @@ A premium, AI-powered cover letter generator built with **React** and **Glassmor
     ```bash
     npm run dev
     ```
-
-## 📦 Deployment
-
-This project is optimized for deployment on **Vercel** or **Netlify**.
-
-1.  Connect your GitHub repo to Vercel/Netlify.
-2.  Set the Environment Variable `VITE_API_URL` to your production backend URL.
-3.  Deploy!
